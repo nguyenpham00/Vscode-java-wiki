@@ -1,0 +1,4 @@
+In order to enable https://projectlombok.org/[Lombok support], you need to edit the `java.jdt.ls.vmargs` setting in VS Code preferences:
+
+    "java.jdt.ls.vmargs": "-javaagent:/path/to/lombok.jar -Xbootclasspath/a:/path/to/lombok.jar" 
+
