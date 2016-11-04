@@ -1,0 +1,3 @@
+Welcome to the Language support for Java™ for Visual Studio Code wiki!
+
+FAQ
