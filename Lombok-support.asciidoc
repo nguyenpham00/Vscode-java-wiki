@@ -6,4 +6,4 @@ Starting with version 0.0.7, in order to enable https://projectlombok.org/[Lombo
 }
 ```
  
-
+Prior to version 0.0.8, the path to the lombok jar should not contain any spaces
