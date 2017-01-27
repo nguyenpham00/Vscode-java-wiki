@@ -1,3 +1,4 @@
 Welcome to the Language support for Java™ for Visual Studio Code wiki!
 
 - https://github.com/redhat-developer/vscode-java/wiki/Lombok-support[Lombok Support]
+- https://github.com/redhat-developer/vscode-java/wiki/Using-a-Proxy[Using a Proxy]
