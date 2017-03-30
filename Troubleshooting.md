@@ -1,8 +1,15 @@
 Here are a few instructions to help troubleshoot vscode-java.
 
 ## Enable logging
+When the Java extension fails to work as expected, reading the logs is quite often a good way to understand what the problem is. The Java extension for VS Code is composed of 2 main parts, the client (VS Code) and the server (eclipse.jdt.ls), which means important information can be logged on both components. 
 
 ### Turn on message tracing between VS Code and the Java Language Server
+
+It can be useful to trace the communications between VS Code and the Java Language Server. This can be achieved by enabling tracing in VS Code settings. The `java.trace.server` configuration can be set to `verbose` to provide full message logging in the Output view (select `Language support for Java` in the view menu). `java.trace.server` can take 3 values:
+
+- `off` : no trace
+- `messages` : logs message **types** exchanged between VS Code and the java server
+- `verbose` : logs **JSON** messages exchanged between VS Code and the java server
 
 ### Get the vscode-java logs
 
