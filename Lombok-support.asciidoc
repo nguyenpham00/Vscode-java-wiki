@@ -6,7 +6,7 @@ In order to enable https://projectlombok.org/[Lombok support], you need to edit 
 }
 ```
  
-Prior to version 0.0.8, the path to the lombok jar should not contain any spaces. For version 0.0.8 or more recent, paths containing spaces should be surrounded by (escaped) double quotes:
+Paths containing spaces should be surrounded by (escaped) double quotes:
 
 ```json
 {
