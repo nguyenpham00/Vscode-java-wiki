@@ -1,0 +1,3 @@
+Starting with version 0.3.0, the Java extension will ask users to opt-in for collection of usage data.
+
+...
