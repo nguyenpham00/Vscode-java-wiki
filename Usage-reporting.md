@@ -1,3 +1,1 @@
-Starting with version 0.x.0, the Java extension will collect usage data.
-
-...
+In the future the Java extension will collect some usage data.
