@@ -2,7 +2,7 @@ Whenever a java file is opened, that does not belong to a project (what we call 
 
 ![](https://cloud.githubusercontent.com/assets/148698/25681391/2667ec7c-3022-11e7-9976-78ecbcdc4870.png)
 
-If you simply close the message, it will pop up next time a standalone java file will be opened. It’s possible to discard the message permanently, by clicking the `Don’t show again` option. 
+If you simply close the message, it will pop up next time a standalone java file will be opened. It’s possible to discard the message permanently, by clicking the `Don’t Show Again` option. 
 
 Should you change your mind, it’s possible to modify that choice in VS Code’s user settings: The `java.errors.incompleteClasspath.severity` key specifies the severity of the message when the classpath is incomplete for a Java file. Supported values are `ignore`, `info`, `warning` and `error`.
 
