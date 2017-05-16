@@ -37,12 +37,12 @@ Error: A fatal exception has occurred. Program will exit.
 ```
 
 ### Get the Java Language Server's workspace logs
-The VS Code console logs above also display the path the the server logs, that might contain other informations:
+The Java Language Server log file might also might contain other informations. To access it:
 
-```
-View server logs at /Users/fbricon/Library/Application Support/Code/User/workspaceStorage/bdea6df99b92680f795ba5759e96cfc4/redhat.java/jdt_ws/.metadata/plugins/.log
-```
+- Open the command palette (`F1`)
+- select `Java: Open Java Language Server log file` 
 
+It will open the Java Language Server log file in a new tab.
 
 ## Clean the workspace directory
 In some occasions, deleting the Java Language Server workspace directory is helpful to go back to a clean slate.
