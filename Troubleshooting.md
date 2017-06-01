@@ -37,7 +37,7 @@ Error: A fatal exception has occurred. Program will exit.
 ```
 
 ### Get the Java Language Server's workspace logs
-The Java Language Server log file might also might contain other informations. To access it:
+The Java Language Server log file might also contain other informations. To access it:
 
 - Open the command palette (`F1`)
 - select `Java: Open Java Language Server log file` 
