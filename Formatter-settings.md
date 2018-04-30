@@ -1,6 +1,18 @@
-vscode-java doesn't expose formatting options of the underlying Eclipse JDT formatter [yet](https://github.com/redhat-developer/vscode-java/issues/2).
+In order to use the formatter, you need an Eclipse formatter file like https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml.
 
-As a workaround, you can define the formatting preferences in your project's [`.settings/org.eclipse.jdt.core.prefs`](https://gist.github.com/fbricon/30c5971f7e492c8a74ca2b2d7a7bb966). 
+Set the following property: 
+```
+"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+```
+
+The property can point to an URL or a local file path.
+If the formatter xml file contains more profiles you will be able set a profile name as:
+
+```
+"java.format.settings.profile": "GoogleStyle",
+```
+
+You can also define the formatting preferences in your project's [`.settings/org.eclipse.jdt.core.prefs`](https://gist.github.com/fbricon/30c5971f7e492c8a74ca2b2d7a7bb966). It will override global formatting settings.
 
 Since this is rather tedious, the best way to edit those preferences is to open your project in Eclipse and set the formatting preferences for your project there. 
 
