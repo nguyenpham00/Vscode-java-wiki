@@ -1,4 +1,4 @@
-In order to [Lombok support](https://projectlombok.org/), you need to edit the `java.jdt.ls.vmargs` setting in VS Code preferences:
+In order to enable [Lombok support](https://projectlombok.org/), you need to edit the `java.jdt.ls.vmargs` setting in VS Code preferences:
 
 ```json
 {
