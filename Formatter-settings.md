@@ -6,7 +6,7 @@ Set the following property:
 ```
 
 The property can point to an URL or a local file path.
-If the formatter xml file contains more profiles you will be able set a profile name as:
+If the formatter xml file contains more profiles you will be able to set a profile name as:
 
 ```
 "java.format.settings.profile": "GoogleStyle",
