@@ -67,4 +67,13 @@ The `-data` option here gives you the workspace directory, that is `/Users/coolu
 
 In case a standalone Java file is open, the workspace directory will be different than the default VS Code one, so make sure you verify the value of `data`
 
+**New in 0.33.0**
+
+You can clean the workspace directory in the following way:
+
+- Open the command palette (F1)
+- select Java: Clean the Java language server workspace
+- click Restart and delete
+
+
 
