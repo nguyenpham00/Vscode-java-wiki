@@ -5,6 +5,7 @@
 ## Features
 
 ### Basic
+ - [ ] Detect JDK correctly
  - [ ] Open standalone file
  - [ ] Open Maven project
  - [ ] Open Gradle Project
