@@ -11,3 +11,6 @@ If you simply close the message, it will pop up next time a standalone java file
 Should you change your mind, it’s possible to modify that choice in VS Code’s user settings: The `java.errors.incompleteClasspath.severity` key specifies the severity of the message when the classpath is incomplete for a Java file. Supported values are `ignore`, `info`, `warning` and `error`.
 
 You need to open a folder containing a pom.xml, build.gradle or at least default eclipse setting files, so that a complete classpath and project hierarchy can be set.
+
+# Android projects
+Gradle-based Android projects currently show this message, as Android development is not unfortunately supported at the moment. This is a [limitation of BuildShip](https://bugs.eclipse.org/bugs/show_bug.cgi?id=468315), the project providing Gradle support. 
