@@ -12,5 +12,5 @@ Should you change your mind, it’s possible to modify that choice in VS Code’
 
 You need to open a folder containing a pom.xml, build.gradle or at least default eclipse setting files, so that a complete classpath and project hierarchy can be set.
 
-# Android projects
+## Android projects
 Gradle-based Android projects currently show this message, as Android development is not unfortunately supported at the moment. This is a [limitation of BuildShip](https://bugs.eclipse.org/bugs/show_bug.cgi?id=468315), the project providing Gradle support. 
