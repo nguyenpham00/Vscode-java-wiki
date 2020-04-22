@@ -1,5 +1,6 @@
 Welcome to the Language support for Java™ for Visual Studio Code wiki!
 
+- https://github.com/redhat-developer/vscode-java/wiki/JDK-Requirements[JDK Requirements]
 - https://github.com/redhat-developer/vscode-java/wiki/%22Classpath-is-incomplete%22-warning["Classpath is incomplete" warning]
 - https://github.com/redhat-developer/vscode-java/wiki/Annotation-Processing-support-for-Maven-projects[Annotation Processing support for Maven projects]
 - https://github.com/redhat-developer/vscode-java/wiki/Enabling-Java-preview-features[Enabling Java preview features]
