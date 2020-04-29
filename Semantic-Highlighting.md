@@ -7,7 +7,7 @@
     "*.static":{
         "fontStyle": "italic" // all tokens with modifier 'static' should be of italic style
     },
-    "*.final":{
+    "*.readonly":{
         "fontStyle": "bold" // all tokens with modifier 'final' should be of bold style
     }
 }
