@@ -8,4 +8,5 @@ Welcome to the Language support for Java™ for Visual Studio Code wiki!
 - https://github.com/redhat-developer/vscode-java/wiki/Formatter-settings[Formatter settings]
 - https://github.com/redhat-developer/vscode-java/wiki/Lombok-support[Lombok Support]
 - https://github.com/redhat-developer/vscode-java/wiki/Using-a-Proxy[Using a Proxy]
+- https://github.com/redhat-developer/vscode-java/wiki/Semantic-Highlighting[Semantic Highlighting]
 - https://github.com/redhat-developer/vscode-java/wiki/Troubleshooting[Troubleshooting]
