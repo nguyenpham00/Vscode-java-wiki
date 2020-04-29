@@ -14,4 +14,8 @@
 ```
 More details in [Semantic Highlighting Wiki Page (Token Styling)](https://github.com/microsoft/vscode/wiki/Semantic-Highlighting-Overview#token-styling).
 
-Semantic Highlighting is controled by the `java.semanticHighlighting.enabled` preference. When enabled, it fixes numerous syntax highlighting issues with Java files. However, you might experience a flickering when it kicks in, as it needs to be computed by the Java Language server, when opening a new file or when typing.
+Semantic Highlighting is controlled by the `java.semanticHighlighting.enabled` preference. When enabled, it fixes numerous syntax highlighting issues with the default Java Textmate grammar. However, you might experience different small issues, particularly a delay when it kicks in, as it needs to be computed by the Java Language server, when opening a new file or when typing.
+
+You will be prompted to enable or disable it on startup:
+
+![](https://user-images.githubusercontent.com/148698/80595049-65d2f000-8a24-11ea-8d9c-19b05b9cac15.png)
