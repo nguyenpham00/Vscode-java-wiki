@@ -1,4 +1,4 @@
-vscode-java requires a [Java Development Kit](https://adoptopenjdk.net/) to run. Currently, Java 8 is the minimum required version, but [Java 11 will soon be required](#jdk11.requirement). 
+vscode-java requires a [Java Development Kit](https://adoptopenjdk.net/) to run (NOT A JRE!). Currently, Java 8 is the minimum required version, but [Java 11 will soon be required](#jdk11.requirement). 
 
 Setting the JDK
 ===============
@@ -8,6 +8,9 @@ The path to the Java Development Kit is searched in the following order:
 - the `JDK_HOME` environment variable
 - the `JAVA_HOME` environment variable
 - on the current system path
+
+Note: The path should end at the parent folder that contains the bin folder.
+Example Path: Use /usr/lib/jvm/java-1.8.0 if bin exists at /usr/lib/jvm/java-1.8.0/bin.
 
 This JDK will be used to launch the Java Language Server. And by default, will be used to compile your projects.
 
