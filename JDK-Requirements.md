@@ -9,8 +9,8 @@ The path to the Java Development Kit is searched in the following order:
 - the `JAVA_HOME` environment variable
 - on the current system path
 
-Note: The path should end at the parent folder that contains the bin folder.
-Example Path: Use /usr/lib/jvm/java-1.8.0 if bin exists at /usr/lib/jvm/java-1.8.0/bin.
+Note: The path should end at the parent folder that contains the `bin` folder.
+Example Path: **Use `/usr/lib/jvm/java-1.8.0`** if `bin` exists at `/usr/lib/jvm/java-1.8.0/bin`.
 
 This JDK will be used to launch the Java Language Server. And by default, will be used to compile your projects.
 
