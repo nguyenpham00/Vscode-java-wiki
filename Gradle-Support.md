@@ -20,6 +20,6 @@ vscode-java provides partial Gradle support for Java projects, by embedding the 
 * `java.import.gradle.user.home`: setting for GRADLE_USER_HOME.
 
 
-# Suspicious gradle wrapper detection<a href="#suspicious-wrapper"/>
+# Suspicious gradle wrapper detection <a href="#suspicious-wrapper"></a>
 
 ...
