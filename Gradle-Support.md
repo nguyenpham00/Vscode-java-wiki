@@ -1,3 +1,4 @@
+...
 
 
 
@@ -31,7 +32,6 @@
 
 
 
-
-# Suspicious gradle wrapper detection<a href="suspicious-wrapper"/>
+# Suspicious gradle wrapper detection<a href="#suspicious-wrapper"/>
 
 ...
