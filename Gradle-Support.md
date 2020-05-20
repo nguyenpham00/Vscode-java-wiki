@@ -5,8 +5,7 @@ vscode-java provides partial Gradle support for Java projects, by embedding the 
 
 - Android projects are not supported
 - Kotlin build descriptors (`build.kts`) are not supported 
-- ...
-
+- Only Java files are compiled. Cross-language compilation is not supported.
 
 # Supported settings:
 
@@ -18,7 +17,6 @@ vscode-java provides partial Gradle support for Java projects, by embedding the 
 * `java.import.gradle.version`: Gradle version, used if the gradle wrapper is missing or disabled.
 * `java.import.gradle.offline.enabled`: Enable/disable the Gradle offline mode. Defaults to `false`.
 * `java.import.gradle.user.home`: setting for GRADLE_USER_HOME.
-
 
 # Suspicious gradle wrapper detection <a id="suspicious.wrapper" />
 When a project uses the gradle wrapper, and `"java.import.gradle.wrapper.enabled"=true` (the default), it will be automatically executed when opening VS Code. 
