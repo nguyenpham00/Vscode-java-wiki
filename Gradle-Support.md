@@ -8,13 +8,13 @@ vscode-java provides partial Gradle support for Java projects, by embedding the 
 - Only Java files are compiled. Cross-language compilation is not supported.
 
 # Supported settings:
-
 * `java.import.gradle.enabled` : Enable/disable the Gradle importer.
-* `java.import.gradle.home`: setting for GRADLE_HOME.
+* Specify the Gradle distribution used by the Java extension:
+  * `java.import.gradle.wrapper.enabled`: Use Gradle from the 'gradle-wrapper.properties' file. Defaults to `true`.
+  * `java.import.gradle.version`: Use Gradle from the specific version if the Gradle wrapper is missing or disabled.
+  * `java.import.gradle.home`: Use Gradle from the specified local installation directory or GRADLE_HOME if the Gradle wrapper is missing or disabled and no 'java.import.gradle.version' is specified.
 * `java.import.gradle.arguments`: Arguments to pass to Gradle.
 * `java.import.gradle.jvmArguments`: JVM arguments to pass to Gradle.
-* `java.import.gradle.wrapper.enabled`: Enable/disable the Gradle wrapper.
-* `java.import.gradle.version`: Gradle version, used if the gradle wrapper is missing or disabled.
 * `java.import.gradle.offline.enabled`: Enable/disable the Gradle offline mode. Defaults to `false`.
 * `java.import.gradle.user.home`: setting for GRADLE_USER_HOME.
 
