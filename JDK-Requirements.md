@@ -1,4 +1,4 @@
-vscode-java requires a [Java Development Kit](https://adoptopenjdk.net/) to run (NOT A JRE!). Currently, Java 8 is the minimum required version, but [Java 11 will soon be required](#jdk11.requirement). 
+vscode-java requires a [Java Development Kit](https://adoptopenjdk.net/) to run (NOT A JRE!). Since vscode-java 0.65.0, Java 11 is the minimum required version. 
 
 Setting the JDK
 ===============
@@ -10,7 +10,7 @@ The path to the Java Development Kit is searched in the following order:
 - on the current system path
 
 Note: The path should end at the parent folder that contains the `bin` folder.
-Example Path: **Use `/usr/lib/jvm/java-1.8.0`** if `bin` exists at `/usr/lib/jvm/java-1.8.0/bin`.
+Example Path: **Use `/usr/lib/jvm/java-11`** if `bin` exists at `/usr/lib/jvm/java-11/bin`.
 
 This JDK will be used to launch the Java Language Server. And by default, will be used to compile your projects.
 
@@ -35,14 +35,16 @@ If you need to compile your projects against a different JDK version, it's recom
 ```
 The default runtime will be used when you open standalone Java files.
 
-Upcoming Java 11 requirement<a name="jdk11.requirement"></a>
+About the Java 11 requirement<a name="jdk11.requirement"></a>
 ============================
 The Eclipse Platform has decided to require Java 11 as the minimum requirement for its September 2020 release. See https://www.eclipse.org/lists/eclipse-pmc/msg03821.html.
 
-Because vscode-java depends on the Eclipse JDT.LS server, that same requirement will apply to future vscode-java releases. But the timeline will be more aggressive: Indeed, vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, so effectively shipping pre-release versions of Eclipse Platform/JDT. Although it's not certain yet, there's a pretty good chance development of those bleeding edge bits will require Java 11 after the June 2020 of Eclipse.
-Which means that Java 11 will be required as early as July 2020 for **running** vscode-java.
+Because vscode-java depends on the Eclipse JDT.LS server, that same requirement to vscode-java. But the timeline is be more aggressive: Indeed, vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, so effectively shipping pre-release versions of Eclipse Platform/JDT. As of July 22nd, 2020, Java 11 is now required for **running** vscode-java.
 
 
 ### Do I need to migrate my projects to Java 11?
 
-**NO you don't**! Well you should, be we're not here to judge. It will still be possible to compile/run Java applications from Java 1.5 to 14, provided the proper [`java.configuration.runtimes`](#java.configuration.runtimes) are configured in the user's settings.json.
+**NO you don't**! Well you should, be we're not here to judge. It is still possible to compile/run Java applications from Java 1.5 to 14, provided the proper [`java.configuration.runtimes`](#java.configuration.runtimes) are configured in the user's settings.json.
+
+### My Gradle version does not support Java 11
+You can set the `java.import.gradle.java.home` preference to specifically run the Gradle Daemon using a prior version of Java. However, this only works for Gradle >= 4.7. 
