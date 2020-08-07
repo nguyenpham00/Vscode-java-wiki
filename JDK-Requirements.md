@@ -41,7 +41,7 @@ About the Java 11 requirement<a name="jdk11.requirement"></a>
 ============================
 The Eclipse Platform has decided to require Java 11 as the minimum requirement for its September 2020 release. See https://www.eclipse.org/lists/eclipse-pmc/msg03821.html.
 
-Because vscode-java depends on the[Eclipse JDT.LS](https://github.com/eclipse/eclipse.jdt.ls), the same requirement applies to vscode-java but on a more agressive timeline: vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, effectively shipping pre-release versions of Eclipse Platform/JDT. As of July 22nd, 2020, Java 11 is now required for **running** vscode-java.
+Because vscode-java depends on the [Eclipse JDT.LS](https://github.com/eclipse/eclipse.jdt.ls), the same requirement applies to vscode-java but on a more agressive timeline: vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, effectively shipping pre-release versions of Eclipse Platform/JDT. As of July 22nd, 2020, Java 11 is now required for **running** vscode-java.
 
 
 ### Do I need to migrate my projects to Java 11?
