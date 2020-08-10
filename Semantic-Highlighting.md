@@ -1,14 +1,17 @@
 [Semantic Highlighting](https://code.visualstudio.com/updates/v1_43#_typescript-semantic-highlighting) is a new feature enabled since VS Code 1.43. Color themes can now write [rules](https://code.visualstudio.com/updates/v1_44#_theme-support-for-semantic-tokens) to color semantic tokens reported by this extension. If current color theme does not provide any, you can define your own rules in user settings, e.g.
 ```json
-"editor.tokenColorCustomizations": {
-    "variable":{
-        "foreground": "#9CDCFE" // change color for tokens of type 'variable'
-    },
-    "*.static":{
-        "fontStyle": "italic" // all tokens with modifier 'static' should be of italic style
-    },
-    "*.readonly":{
-        "fontStyle": "bold" // all tokens with modifier 'final' should be of bold style
+"editor.semanticTokenColorCustomizations": {
+    "rules": {
+        "class": "#ff0000", // change color for tokens of type 'class'
+        "parameter":{
+            "foreground": "#00ff0d" // change color for tokens of type 'parameter'
+        },
+        "*.static":{
+            "fontStyle": "italic" // all tokens with modifier 'static' should be of italic style
+        },
+        "*.readonly":{
+            "fontStyle": "bold" // all tokens with modifier 'final' should be of bold style
+        }
     }
 }
 ```
