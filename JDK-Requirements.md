@@ -35,7 +35,7 @@ If you need to compile your projects against a different JDK version, it's recom
 ```
 The default runtime will be used when you open standalone Java files.
 
-**⚠ Simply defining JavaSE-11 in `java.configuration.runtimes` is not enough for vscode-java to start, `java.home` (or any of its alternative environment variables) still need to point to a valid JDK 11 location.**
+**⚠ Simply defining JavaSE-11 in `java.configuration.runtimes` is not enough for vscode-java to start, `java.home` (or any of its alternative environment variables) still needs to point to a valid JDK 11 location.**
 
 About the Java 11 requirement<a name="jdk11.requirement"></a>
 ============================
