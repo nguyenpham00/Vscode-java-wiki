@@ -6,7 +6,7 @@ You can contribute a VSCode Java Extension to enhance the existing VSCode Java f
 You can follow the tutorial [here](https://code.visualstudio.com/docs/extensions/overview) to start your own VSCode extension
 
 ## Modify package.json
-Put a [server bundle](https://github.com/eclipse/eclipse.jdt.ls/wiki/Contribute-an-extension-bundle) together with your current VS Code extension (in a `./server` subfolder, for example), and add the following code snippet to the `contributes` section. Thus, the language server will discover your plugin for later usage.
+Put a [server bundle](https://github.com/eclipse/eclipse.jdt.ls/wiki/Contribute-an-extension-bundle) together with your current VS Code extension (in a `./server` subfolder, for example), and add the following code snippet to the `contributes` section of your extension's package.json. Thus, the language server will discover your plugin for later usage.
 ```json
 "contributes": {
     "javaExtensions": ["./server/my.java.plugin.jar"],
