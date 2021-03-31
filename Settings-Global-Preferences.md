@@ -10,7 +10,7 @@ You can also define the settings preferences in your project's [`.settings/org.e
 The best way to create those preferences is to edit it in Eclipse.
 
 In Eclipse, right-click on your project, open `Window` >`Preferences` > `Java Code Style` > `Formatter`,  `Window` >`Preferences` > `Java` > `Code Style` > `Organize Imports`, `Window` >`Preferences` > `Java` > `Compiler` > `Errors/Warnings` and create a new settings file :
-![Eclipse Preferences](https://github.com/snjeza/vscode-test/raw/master/.github/images/settings.png)
 
+![Eclipse Preferences](https://github.com/snjeza/vscode-test/raw/master/.github/images/settings.png)
 
 The preferences file can be exported using `File` > `Export` > `General` > `Preferences`. You can use this file to define `java.settings.url`.
