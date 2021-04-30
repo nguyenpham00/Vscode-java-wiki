@@ -1,12 +1,12 @@
-Under the hood, instead of `javac`, vscode-java uses [ECJ](https://stackoverflow.com/a/3061680/753170), a Java 15 compiler provided by [Eclipse JDT](https://www.eclipse.org/jdt/core/). It is used to compile against all other versions of Java. 
-But the ECJ compiler [only supports the latest JDK release when it comes to preview features](https://bugs.eclipse.org/bugs/show_bug.cgi?id=549258#c15). It means that, since vscode-java 0.68.0, **preview features can not be enabled for projects compiling against Java 14 (or older)**, even if you configured the proper runtime. Those projects need to be updated to use Java 15 in vscode-java.
+Under the hood, instead of `javac`, vscode-java uses [ECJ](https://stackoverflow.com/a/3061680/753170), a Java 16 compiler provided by [Eclipse JDT](https://www.eclipse.org/jdt/core/). It is used to compile against all other versions of Java. 
+But the ECJ compiler [only supports the latest JDK release when it comes to preview features](https://bugs.eclipse.org/bugs/show_bug.cgi?id=549258#c15). It means that, since vscode-java 0.78.0, **preview features can not be enabled for projects compiling against Java 15 (or older)**, even if you configured the proper runtime. Those projects need to be updated to use Java 16 in vscode-java.
 
 It's recommended you configure the `java.configuration.runtimes` preference in your user's settings.json:
 ```json
 "java.configuration.runtimes": [
   {
-    "name": "JavaSE-15",
-    "path": "/path/to/jdk-15",
+    "name": "JavaSE-16",
+    "path": "/path/to/jdk-16",
     "default": true
   },
 ],
@@ -14,7 +14,7 @@ It's recommended you configure the `java.configuration.runtimes` preference in y
 Now, depending on the style of Java projects you use, there are different ways to enable preview features. 
 
 # Standalone Java files
-When you open standalone Java files (i.e. which have no Eclipse/Maven/Gradle settings), preview features are enabled by default, without warnings, if vscode-java was started with a JDK 15 or `JavaSE-15` is set to be the default in `java.configuration.runtimes`.
+When you open standalone Java files (i.e. which have no Eclipse/Maven/Gradle settings), preview features are enabled by default, without warnings, if vscode-java was started with a JDK 16 or `JavaSE-16` is set to be the default in `java.configuration.runtimes`.
 
 # Maven projects
 Maven projects need to have the `--enable-preview` flag added to the maven-compiler-plugin configuration, in their pom.xml:
@@ -33,7 +33,7 @@ Maven projects need to have the `--enable-preview` flag added to the maven-compi
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
-          <release>15</release>
+          <release>16</release>
           <compilerArgs>--enable-preview</compilerArgs>
         </configuration>
       </plugin>
@@ -48,23 +48,23 @@ Eclipse projects need to add the the following preferences to `.settings/org.ecl
 ```
 eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
-org.eclipse.jdt.core.compiler.codegen.targetPlatform=15
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=16
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
-org.eclipse.jdt.core.compiler.compliance=15
+org.eclipse.jdt.core.compiler.compliance=16
 org.eclipse.jdt.core.compiler.debug.lineNumber=generate
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
 org.eclipse.jdt.core.compiler.debug.sourceFile=generate
 org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
 org.eclipse.jdt.core.compiler.release=enabled
-org.eclipse.jdt.core.compiler.source=15
+org.eclipse.jdt.core.compiler.source=16
 
 org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=enabled
 org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=ignore
 ```
 
 # Gradle projects
-**:warning: Gradle 6.7 minimum is required to build Java 15 projects.** 
+**:warning: Gradle 7.0 minimum is required to build Java 16 projects.** 
 
 Gradle projects can also maintain the same `.settings/org.eclipse.jdt.core.prefs` file. Alternatively, adding an `eclipse.jdt.file.withProperties` hook in build.gradle is possible, but requires the gradle `compileJdt` task *to be invoked manually*, as [Buildship](https://github.com/eclipse/buildship), the underlying Gradle integration tool, [doesn't invoke it](https://discuss.gradle.org/t/when-does-buildship-eclipse-customization-run/20781/2) :
 
@@ -74,8 +74,8 @@ plugins {
     id 'java-library'
     id 'eclipse'
 }
-sourceCompatibility = JavaVersion.VERSION_15
-targetCompatibility = JavaVersion.VERSION_15
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 repositories {
      jcenter()
