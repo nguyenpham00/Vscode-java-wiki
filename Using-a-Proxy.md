@@ -10,5 +10,6 @@ This is done by configuring the `java.jdt.ls.vmargs` setting in VS Code preferen
 
 You could, in theory, set the proxy settings in VS Code's workspace preferences, but you certainly don't want these sensible settings to be made publicly available. So the user preferences are the preferred choice most of the time. 
 
-However, you need to be aware workspace preferences will override any user preferences, so for instance, memory settings defined in the workspace preferences's `java.jdt.ls.vmargs` would replace proxy settings set the user preferences. 
+However, you need to be aware workspace preferences will override any user preferences, so for instance, memory settings defined in the workspace preferences's `java.jdt.ls.vmargs` would replace proxy settings set the user preferences.
 
+To disable all proxy settings, use the option `-Djdt.ls.disableProxies=true`
