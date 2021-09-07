@@ -46,7 +46,7 @@ Because vscode-java depends on the [Eclipse JDT.LS](https://github.com/eclipse/e
 
 ### Do I need to migrate my projects to Java 11?
 
-**NO you don't**! Well you should, be we're not here to judge. It is still possible to compile/run Java applications from Java 1.5 to 14, provided the proper [`java.configuration.runtimes`](#java.configuration.runtimes) are configured in the user's settings.json.
+**NO you don't**! Well you should, be we're not here to judge. It is still possible to compile/run Java applications from Java 1.5 to 16, provided the proper [`java.configuration.runtimes`](#java.configuration.runtimes) are configured in the user's settings.json.
 
 ### My Gradle version does not support Java 11
 You can set the `java.import.gradle.java.home` preference to specifically run the Gradle Daemon using a prior version of Java. However, this only works for Gradle >= 4.7. 
