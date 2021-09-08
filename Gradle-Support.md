@@ -4,7 +4,7 @@ vscode-java provides partial Gradle support for Java projects, by embedding the 
 # Known limitations:
 
 - Android projects are not supported
-- Kotlin build descriptors (`build.kts`) are not supported 
+- Build file validation is limited as Gradle doesn't report exact location of errors
 - Only Java files are compiled. Cross-language compilation is not supported.
 
 # Supported settings:
