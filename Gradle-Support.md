@@ -43,4 +43,7 @@ and the wrapper will be used.
 If you don't trust it, `"allowed":"false"` will be stored. 
 
 The default Gradle version embedded in Buildship will be used to build your project until the wrapper is explicitly trusted.
- 
+
+# Performance degrades with Gradle Project
+
+In some instances it is necessary to disabled the [file system watching](https://blog.gradle.org/introducing-file-system-watching) feature by adding `org.gradle.vfs.watch=false` to the gradle properties.
