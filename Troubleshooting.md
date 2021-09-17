@@ -1,5 +1,37 @@
 Here are a few instructions to help troubleshoot vscode-java.
 
+## Clean the workspace directory
+In some occasions, deleting the Java Language Server workspace directory is helpful to go back to a clean slate.
+Generally speaking, on the different platforms, the VS Code user workspace storage area can be found under these locations :
+
+- Windows : `%APPDATA%\Code[ - Variant]\User\workspaceStorage\`
+- MacOS : `$HOME/Library/Application Support/Code[ - Variant]/User/workspaceStorage/`
+- Linux : `$HOME/.config/Code[ - Variant]/User/workspaceStorage/`
+
+**New in 0.33.0**
+
+You can clean the workspace directory in the following way:
+
+- Open the command palette (F1)
+- select `Java: Clean the Java Language Server Workspace`
+- select `Restart and delete` from the confirmation prompt
+
+## Clean the workspace directory
+In some occasions, deleting the Java Language Server workspace directory is helpful to go back to a clean slate.
+Generally speaking, on the different platforms, the VS Code user workspace storage area can be found under these locations :
+
+- Windows : `%APPDATA%\Code[ - Variant]\User\workspaceStorage\`
+- MacOS : `$HOME/Library/Application Support/Code[ - Variant]/User/workspaceStorage/`
+- Linux : `$HOME/.config/Code[ - Variant]/User/workspaceStorage/`
+
+**New in 0.33.0**
+
+You can clean the workspace directory in the following way:
+
+- Open the command palette (F1)
+- select Java: Clean the Java language server workspace
+- click Restart and delete
+
 ## Enable logging
 When the Java extension fails to work as expected, reading the logs is quite often a good way to understand what the problem is. The Java extension for VS Code is composed of 2 main parts, the client (VS Code) and the server (eclipse.jdt.ls), which means important information can be logged on both components. 
 
@@ -43,22 +75,6 @@ The Java Language Server log file might also contain other informations. To acce
 - select `Java: Open Java Language Server log file` 
 
 It will open the Java Language Server log file in a new tab.
-
-## Clean the workspace directory
-In some occasions, deleting the Java Language Server workspace directory is helpful to go back to a clean slate.
-Generally speaking, on the different platforms, the VS Code user workspace storage area can be found under these locations :
-
-- Windows : `%APPDATA%\Code[ - Variant]\User\workspaceStorage\`
-- MacOS : `$HOME/Library/Application Support/Code[ - Variant]/User/workspaceStorage/`
-- Linux : `$HOME/.config/Code[ - Variant]/User/workspaceStorage/`
-
-**New in 0.33.0**
-
-You can clean the workspace directory in the following way:
-
-- Open the command palette (F1)
-- select Java: Clean the Java language server workspace
-- click Restart and delete
 
 
 
