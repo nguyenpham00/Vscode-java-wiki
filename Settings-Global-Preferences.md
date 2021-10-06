@@ -20,6 +20,12 @@ The preferences file can be exported using `File` > `Export` > `General` > `Pref
 The list of options can also be viewed on the [JavaCore](https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2FJavaCore.html) Javadoc page.
 
 ```
+`org.eclipse.jdt.core.compiler.debug.localVariable` *Generating Local Variable Debug Attribute.* `{  "generate", "do not generate"  }`
+`org.eclipse.jdt.core.compiler.debug.lineNumber` *Generating Line Number Debug Attribute.* `{  "generate", "do not generate"  }`
+`org.eclipse.jdt.core.compiler.debug.sourceFile` *Generating Source Debug Attribute.* `{  "generate", "do not generate"  }`
+`org.eclipse.jdt.core.compiler.codegen.unusedLocal` *Preserving Unused Local Variables.* `{  "preserve", "optimize out"  }`
+`org.eclipse.jdt.core.compiler.codegen.methodParameters` *Generating Method Parameters Attribute.* `{  "generate", "do not generate"  }`
+`org.eclipse.jdt.core.compiler.codegen.targetPlatform` *Defining Target Java Platform.* `{  "1.1", "cldc1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "9", "10", "11"  }`
 `org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode` *Inline JSR Bytecode Instruction.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.doc.comment.support` *Javadoc Comment Support.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.overridingPackageDefaultMethod` *Reporting Attempt to Override Package Visible Method.* `{  "error", "warning", "info", "ignore"  }`
@@ -86,12 +92,17 @@ The list of options can also be viewed on the [JavaCore](https://help.eclipse.or
 `org.eclipse.jdt.core.compiler.problem.invalidJavadocTags` *Reporting Invalid Javadoc Tags.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.invalidJavadocTagsDeprecatedRef` *Reporting Invalid Javadoc Tags with Deprecated References.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.invalidJavadocTagsNotVisibleRef` *Reporting Invalid Javadoc Tags with Not Visible References.* `{ "enabled", "disabled" }`
+`org.eclipse.jdt.core.compiler.problem.invalidJavadocTagsVisibility` *Visibility Level For Invalid Javadoc Tags.* `{  "public", "protected", "default", "private"  }`
+`org.eclipse.jdt.core.compiler.problem.missingJavadocTagDescription` *Reporting missing tag description.* `{  "return_tag", "all_standard_tags", "no_tag"  }`
 `org.eclipse.jdt.core.compiler.problem.missingJavadocTags` *Reporting Missing Javadoc Tags.* `{  "error", "warning", "info", "ignore"  }`
+`org.eclipse.jdt.core.compiler.problem.missingJavadocTagsVisibility` *Visibility Level For Missing Javadoc Tags.* `{  "public", "protected", "default", "private"  }`
 `org.eclipse.jdt.core.compiler.problem.missingJavadocTagsOverriding` *Reporting Missing Javadoc Tags on Overriding Methods.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.missingJavadocTagsMethodTypeParameters` *Reporting Missing Javadoc Tags for Method Type Parameters.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.missingJavadocComments` *Reporting Missing Javadoc Comments.* `{  "error", "warning", "info", "ignore"  }`
+`org.eclipse.jdt.core.compiler.problem.missingJavadocCommentsVisibility` *Visibility Level For Missing Javadoc Comments.* `{  "public", "protected", "default", "private"  }`
 `org.eclipse.jdt.core.compiler.problem.missingJavadocCommentsOverriding` *Reporting Missing Javadoc Comments on Overriding Methods.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.noImplicitStringConversion` *Reporting Usage of <code>char[]</code> Expressions in String Concatenations.* `{  "error", "warning", "info", "ignore"  }`
+`org.eclipse.jdt.core.compiler.maxProblemPerUnit` *Maximum Number of Problems Reported per Compilation Unit.* `{  }`
 `org.eclipse.jdt.core.compiler.problem.fatalOptionalError` *Treating Optional Error as Fatal.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.parameterAssignment` *Reporting Parameter Assignment.* `{  "error", "warning", "info", "ignore"  }`
 `org.eclipse.jdt.core.compiler.problem.reportMethodCanBeStatic` *Reporting a method that qualifies as static, but not declared static.* `{  "error", "warning", "info", "ignore"  }`
@@ -101,8 +112,19 @@ The list of options can also be viewed on the [JavaCore](https://help.eclipse.or
 `org.eclipse.jdt.core.compiler.problem.explicitlyClosedAutoCloseable` *Reporting a resource that is not managed by try-with-resources.* `{  "error", "warning", "info", "ignore"  }`
 `org.eclipse.jdt.core.compiler.problem.unlikelyCollectionMethodArgumentType` *Reporting a method invocation providing an argument of an unlikely type.* `{  "error", "warning", "info", "ignore"  }`
 `org.eclipse.jdt.core.compiler.problem.unlikelyCollectionMethodArgumentTypeStrict` *Perform strict analysis against the expected type of collection methods.* `{ "enabled", "disabled" }`
+`org.eclipse.jdt.core.compiler.problem.unlikelyEqualsArgumentType` *Reporting a method invocation providing an argument of an unlikely type to method equals.* `{  }`
+`org.eclipse.jdt.core.compiler.problem.APILeak` *Reporting when public API uses a non-API type.* `{  }`
+`org.eclipse.jdt.core.compiler.problem.unstableAutoModuleName` *Reporting when a module requires an auto module with an unstable name.* `{  }`
+`org.eclipse.jdt.core.compiler.problem.suppressWarningsNotFullyAnalysed` *Reporting when a {@code @SuppressWarnings} annotation might be unused, but exact information is not available.* `{  }`
 `org.eclipse.jdt.core.compiler.annotation.nullanalysis` *Annotation-based Null Analysis.* `{ "enabled", "disabled" }`
+`org.eclipse.jdt.core.compiler.annotation.nullable` *Name of Annotation Type for Nullable Types.* `{  }`
+`org.eclipse.jdt.core.compiler.annotation.nullable.secondary` *Names of Secondary Annotation Types for Nullable Types.* `{  }`
+`org.eclipse.jdt.core.compiler.annotation.nonnull` *Name of Annotation Type for Non-Null Types.* `{  }`
+`org.eclipse.jdt.core.compiler.annotation.nonnull.secondary` *Names of Secondary Annotation Types for Non-Null Types.* `{  }`
+`org.eclipse.jdt.core.compiler.annotation.nonnullbydefault` *Name of Annotation Type to specify a nullness default for unannotated types.* `{  }`
+`org.eclipse.jdt.core.compiler.annotation.nonnullbydefault.secondary` *Names of Secondary Annotation Types to specify a nullness default for unannotated types.* `{  }`
 `org.eclipse.jdt.core.compiler.annotation.missingNonNullByDefaultAnnotation` *Reporting missing default nullness annotation.* `{  "error", "warning", "info", "ignore"  }`
+`org.eclipse.jdt.core.builder.annotationPath.allLocations` *Read external annotations from all build path entries.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.nullSpecViolation` *Reporting Violations of Null Specifications.* `{  "error", "warning"  }`
 `org.eclipse.jdt.core.compiler.problem.nullAnnotationInferenceConflict` *Reporting conflicts between declared null annotation and inferred null value* `{  "error", "warning", "info", "ignore"  }`
 `org.eclipse.jdt.core.compiler.problem.nullUncheckedConversion` *Reporting unchecked conversion from a type with unknown nullness to a null annotated type* `{  "error", "warning", "info", "ignore"  }`
@@ -113,7 +135,11 @@ The list of options can also be viewed on the [JavaCore](https://help.eclipse.or
 `org.eclipse.jdt.core.compiler.problem.nonnullParameterAnnotationDropped` *Reporting Dropped Nonnull Parameter Annotations.* `{  "error", "warning", "info", "ignore"  }`
 `org.eclipse.jdt.core.compiler.problem.nonnullTypeVariableFromLegacyInvocation` *Reporting Unsafe NonNull Interpretation Of Type Variables.* `{  "error", "warning", "info", "ignore"  }`
 `org.eclipse.jdt.core.compiler.problem.annotatedTypeArgumentToUnannotated` *Reporting Unsafe Conversion To Unannotated Type Argument.* `{  "error", "warning", "info", "ignore"  }`
+`org.eclipse.jdt.core.compiler.source` *Setting Source Compatibility Mode.* `{  "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "9", "10", "11"  }`
+`org.eclipse.jdt.core.compiler.compliance` *Setting Compliance Level.* `{  "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "9", "10", "11"  }`
 `org.eclipse.jdt.core.compiler.release` *Use system libraries from release.* `{ "enabled", "disabled" }`
+`org.eclipse.jdt.core.compiler.taskPriorities` *Defining the Automatic Task Priorities.* `{  "&lt;priority&gt;[,&lt;priority&gt;]*"  }`
+`org.eclipse.jdt.core.compiler.taskTags` *Defining the Automatic Task Tags.* `{  "&lt;tag&gt;[,&lt;tag&gt;]*"  }`
 `org.eclipse.jdt.core.compiler.taskCaseSensitive` *Determining whether task tags are case-sensitive.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.forbiddenReference` *Reporting Forbidden Reference to Type with Restricted Access.* `{  "error", "warning", "info", "ignore"  }`
 `org.eclipse.jdt.core.compiler.problem.discouragedReference` *Reporting Discouraged Reference to Type with Restricted Access.* `{  "error", "warning", "info", "ignore"  }`
@@ -132,6 +158,7 @@ The list of options can also be viewed on the [JavaCore](https://help.eclipse.or
 `org.eclipse.jdt.core.compiler.problem.unusedObjectAllocation` *Reporting Allocation of an Unused Object.* `{  "error", "warning", "info", "ignore"  }`
 `org.eclipse.jdt.core.compiler.problem.redundantSpecificationOfTypeArguments` *Reporting redundant specification of type arguments in class instance creation expressions.* `{  "error", "warning", "info", "ignore"  }`
 `org.eclipse.jdt.core.computeJavaBuildOrder` *Computing Project Build Order.* `{  "compute", "ignore"  }`
+`org.eclipse.jdt.core.builder.resourceCopyExclusionFilter` *Specifying Filters for Resource Copying Control.* `{  "&lt;name&gt;[,&lt;name&gt;]*  }`
 `org.eclipse.jdt.core.builder.duplicateResourceTask` *Reporting Duplicate Resources.* `{  "error", "warning"  }`
 `org.eclipse.jdt.core.builder.cleanOutputFolder` *Cleaning Output Folder(s).* `{  "clean", "ignore"  }`
 `org.eclipse.jdt.core.builder.recreateModifiedClassFileInOutputFolder` *Recreate Modified class files in Output Folder.* `{  "enabled", "ignore"  }`
@@ -145,11 +172,22 @@ The list of options can also be viewed on the [JavaCore](https://help.eclipse.or
 `org.eclipse.jdt.core.classpath.mainOnlyProjectHasTestOnlyDependency` *Reporting if a project which has only main sources depends on a project with only test sources.* `{  "error", "ignore"  }`
 `org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures` *Enabling support for preview language features.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures` *Reporting Preview features.* `{  "warning", "info", "ignore"  }`
+`org.eclipse.jdt.core.timeoutForParameterNameFromAttachedJavadoc` *Set the timeout value for retrieving the* `{  }`
 `org.eclipse.jdt.core.codeComplete.visibilityCheck` *Activate Visibility Sensitive Completion.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.codeComplete.deprecationCheck` *Activate Deprecation Sensitive Completion.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.codeComplete.camelCaseMatch` *Activate Camel Case Sensitive Completion.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.codeComplete.subwordMatch` *Activate Subword Code Completion.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.codeComplete.forceImplicitQualification` *Automatic Qualification of Implicit Members.* `{ "enabled", "disabled" }`
+`org.eclipse.jdt.core.codeComplete.fieldPrefixes` *Define the Prefixes for Field Name.* `{  "&lt;prefix&gt;[,&lt;prefix&gt;]*"  }`
+`org.eclipse.jdt.core.codeComplete.staticFieldPrefixes` *Define the Prefixes for Static Field Name.* `{  "&lt;prefix&gt;[,&lt;prefix&gt;]*"  }`
+`org.eclipse.jdt.core.codeComplete.staticFinalFieldPrefixes` *Define the Prefixes for Static Final Field Name.* `{  "&lt;prefix&gt;[,&lt;prefix&gt;]*"  }`
+`org.eclipse.jdt.core.codeComplete.localPrefixes` *Define the Prefixes for Local Variable Name.* `{  "&lt;prefix&gt;[,&lt;prefix&gt;]*"  }`
+`org.eclipse.jdt.core.codeComplete.argumentPrefixes` *Define the Prefixes for Argument Name.* `{  "&lt;prefix&gt;[,&lt;prefix&gt;]*"  }`
+`org.eclipse.jdt.core.codeComplete.fieldSuffixes` *Define the Suffixes for Field Name.* `{  "&lt;suffix&gt;[,&lt;suffix&gt;]*"  }`
+`org.eclipse.jdt.core.codeComplete.staticFieldSuffixes` *Define the Suffixes for Static Field Name.* `{  "&lt;suffix&gt;[,&lt;suffix&gt;]*"  }`
+`org.eclipse.jdt.core.codeComplete.staticFinalFieldSuffixes` *Define the Suffixes for Static Final Field Name.* `{  "&lt;suffix&gt;[,&lt;suffix&gt;]*"  }`
+`org.eclipse.jdt.core.codeComplete.localSuffixes` *Define the Suffixes for Local Variable Name.* `{  "&lt;suffix&gt;[,&lt;suffix&gt;]*"  }`
+`org.eclipse.jdt.core.codeComplete.argumentSuffixes` *Define the Suffixes for Argument Name.* `{  "&lt;suffix&gt;[,&lt;suffix&gt;]*"  }`
 `org.eclipse.jdt.core.codeComplete.forbiddenReferenceCheck` *Activate Forbidden Reference Sensitive Completion.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.codeComplete.discouragedReferenceCheck` *Activate Discouraged Reference Sensitive Completion.* `{ "enabled", "disabled" }`
 `org.eclipse.jdt.core.codeComplete.suggestStaticImports` *Activate Suggestion of Static Import.* `{ "enabled", "disabled" }`
