@@ -3,6 +3,7 @@
 "editor.semanticTokenColorCustomizations": {
     "rules": {
         "class": "#ff0000", // change color for tokens of type 'class'
+        "*.constructor": "#f7c090", // change color for tokens of type '*.constructor'
         "parameter":{
             "foreground": "#00ff0d" // change color for tokens of type 'parameter'
         },
