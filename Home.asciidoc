@@ -12,3 +12,4 @@ Welcome to the Language support for Java™ for Visual Studio Code wiki!
 - https://github.com/redhat-developer/vscode-java/wiki/Semantic-Highlighting[Semantic Highlighting]
 - https://github.com/redhat-developer/vscode-java/wiki/Troubleshooting[Troubleshooting]
 - https://github.com/redhat-developer/vscode-java/wiki/Predefined-Variables-for-Java-Template-Snippets[Predefined Variables for Java Template Snippets]
+- https://github.com/redhat-developer/vscode-java/wiki/Use-proper-cacerts-to-import-Java-projects[Use proper cacerts to import Java projects]
