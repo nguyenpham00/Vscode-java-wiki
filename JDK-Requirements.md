@@ -5,9 +5,9 @@ Setting the JDK
 - Platform Versions
 
 
-Since vscode-java 1.2.0, it publishes platform specific versions to Microsoft VS Code marketplace. And the platform versions have JRE 17 embedded in Java extension for platforms such as `win32-x64`, `linux-x64`, `linux-arm64`, `darwin-x64`, `darwin-arm64`. The embedded JRE will be used to launch the Java Language Server by default. If you want to use a different JDK to start the Java Language Server, you can use the setting `java.jdt.ls.java.home` to do so.
+Since vscode-java 1.2.0, it publishes platform specific versions to Microsoft VS Code marketplace. And the platform versions have JRE 17 embedded in Java extension for platforms such as `win32-x64`, `linux-x64`, `linux-arm64`, `darwin-x64`, `darwin-arm64`. The embedded JRE will be used to launch the Java Language Server by default. Users are only responsible for configuring **Project JDKs** to compile your Java projects. For example, if you are working on JDK 8, you only need to install JDK 8 and no longer need to install JDK 11 additionally.
 
-In the platform version, if you are working on JDK 8, you only need to install JDK 8 and no longer need to install JDK 11 additionally.
+However, if you want to use a different JDK to start the Java Language Server, you can use the setting `java.jdt.ls.java.home` to do so.
 
 - Universal Version
 
