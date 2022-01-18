@@ -1,10 +1,21 @@
-vscode-java requires a [Java Development Kit](https://adoptopenjdk.net/) to run (NOT A JRE!). Since vscode-java 0.65.0, **Java 11 is the _minimum_ required version**. 
+vscode-java requires a [Java Development Kit](https://adoptopenjdk.net/) to run.
 
 Setting the JDK
 ===============
-The path to the Java Development Kit is searched in the following order:
+- Platform Versions
 
-- the `java.home` setting in VS Code settings (workspace then user settings)
+
+Since vscode-java 1.2.0, it publishes platform specific versions to Microsoft VS Code marketplace. And the platform versions have JRE 17 embedded in Java extension for platforms such as `win32-x64`, `linux-x64`, `linux-arm64`, `darwin-x64`, `darwin-arm64`. The embedded JRE will be used to launch the Java Language Server by default. If you want to use a different JDK to start the Java Language Server, you can use the setting `java.jdt.ls.java.home` to do so.
+
+In the platform version, if you are working on JDK 8, you only need to install JDK 8 and no longer need to install JDK 11 additionally.
+
+- Universal Version
+
+For some other extension marketplaces (e.g. Open VSX), they haven't supported platform specific versions yet and will still use the universal version without embedded JRE.
+
+In the universal version, the path to the Java Development Kit is searched in the following order:
+- the `java.jdt.ls.java.home` setting in VS Code settings (workspace then user settings)
+- (deprecated, use `java.jdt.ls.java.home` instead). the `java.home` setting in VS Code settings (workspace then user settings)
 - the `JDK_HOME` environment variable
 - the `JAVA_HOME` environment variable
 - on the current system path
@@ -12,7 +23,9 @@ The path to the Java Development Kit is searched in the following order:
 Note: The path should end at the parent folder that contains the `bin` folder.
 Example Path: **Use `/usr/lib/jvm/java-11`** if `bin` exists at `/usr/lib/jvm/java-11/bin`.
 
-This JDK will be used to launch the Java Language Server. And by default, will be used to compile your projects.
+This JDK will be used to launch the Java Language Server. by default, will be used to compile your projects.
+
+- Project JDKs
 
 If you need to compile your projects against a different JDK version, it's recommended you configure the `java.configuration.runtimes` property in your user settings, eg:
 <a name="java.configuration.runtimes"></a>
@@ -35,10 +48,13 @@ If you need to compile your projects against a different JDK version, it's recom
 ```
 The default runtime will be used when you open standalone Java files.
 
-**⚠ Simply defining JavaSE-11 in `java.configuration.runtimes` is not enough for vscode-java to start, `java.home` (or any of its alternative environment variables) still needs to point to a valid JDK 11 location.**
+
+**⚠ For the universal version, simply defining JavaSE-11 in `java.configuration.runtimes` is not enough for vscode-java to start, `java.jdt.ls.java.home` (or any of its alternative environment variables) still needs to point to a valid JDK 11 location.**
 
 About the Java 11 requirement<a name="jdk11.requirement"></a>
 ============================
+This applies mainly to the universal version.
+
 The Eclipse Platform has decided to require Java 11 as the minimum requirement for its September 2020 release. See https://www.eclipse.org/lists/eclipse-pmc/msg03821.html.
 
 Because vscode-java depends on the [Eclipse JDT.LS](https://github.com/eclipse/eclipse.jdt.ls), the same requirement applies to vscode-java but on a more agressive timeline: vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, effectively shipping pre-release versions of Eclipse Platform/JDT. As of July 22nd, 2020, Java 11 is now required for **running** vscode-java.
