@@ -49,20 +49,20 @@ If you need to compile your projects against a different JDK version, it's recom
 The default runtime will be used when you open standalone Java files.
 
 
-**⚠ For the universal version, simply defining JavaSE-11 in `java.configuration.runtimes` is not enough for vscode-java to start, `java.jdt.ls.java.home` (or any of its alternative environment variables) still needs to point to a valid JDK 11 location.**
+**⚠ For the universal version, simply defining JavaSE-17 in `java.configuration.runtimes` is not enough for vscode-java to start, `java.jdt.ls.java.home` (or any of its alternative environment variables) still needs to point to a valid JDK 17 location.**
 
-About the Java 11 requirement<a name="jdk11.requirement"></a>
+About the Java 17 requirement<a name="jdk17.requirement"></a>
 ============================
 This applies mainly to the universal version.
 
-The Eclipse Platform has decided to require Java 11 as the minimum requirement for its September 2020 release. See https://www.eclipse.org/lists/eclipse-pmc/msg03821.html.
+The m2e team has decided to require Java 17 as the minimum requirement for its September 2020 release. See https://github.com/eclipse-m2e/m2e-core/pull/740.
 
-Because vscode-java depends on the [Eclipse JDT.LS](https://github.com/eclipse/eclipse.jdt.ls), the same requirement applies to vscode-java but on a more agressive timeline: vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, effectively shipping pre-release versions of Eclipse Platform/JDT. As of July 22nd, 2020, Java 11 is now required for **running** vscode-java.
+Because vscode-java depends on the [Eclipse JDT.LS](https://github.com/eclipse/eclipse.jdt.ls), the same requirement applies to vscode-java but on a more agressive timeline: vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, effectively shipping pre-release versions of Eclipse Platform/JDT. As of Jun, 8, 2022, Java 17 is now required for **running** vscode-java.
 
 
-### Do I need to migrate my projects to Java 11?
+### Do I need to migrate my projects to Java 17?
 
 **NO you don't**! Well you should, be we're not here to judge. It is still possible to compile/run Java applications from Java 1.5 to 16, provided the proper [`java.configuration.runtimes`](#java.configuration.runtimes) are configured in the user's settings.json.
 
-### My Gradle version does not support Java 11
+### My Gradle version does not support Java 17
 You can set the `java.import.gradle.java.home` preference to specifically run the Gradle Daemon using a prior version of Java. However, this only works for Gradle >= 4.7. 
