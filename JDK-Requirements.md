@@ -1,4 +1,4 @@
-vscode-java requires a [Java Development Kit](https://adoptopenjdk.net/) to run.
+vscode-java requires a [Java Development Kit](https://adoptium.net/) to run.
 
 Setting the JDK
 ===============
