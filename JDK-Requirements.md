@@ -5,7 +5,7 @@ Setting the JDK
 - Platform Versions
 
 
-Since vscode-java 1.2.0, it publishes platform specific versions to Microsoft VS Code marketplace. And the platform versions have JRE 17 embedded in Java extension for platforms such as `win32-x64`, `linux-x64`, `linux-arm64`, `darwin-x64`, `darwin-arm64`. The embedded JRE will be used to launch the Java Language Server by default. Users are only responsible for configuring **Project JDKs** to compile your Java projects. For example, if you are working on JDK 8, you only need to install JDK 8 and no longer need to install JDK 11 additionally.
+Since vscode-java 1.2.0, it publishes platform specific versions to Microsoft VS Code marketplace. And the platform versions have JRE 17 embedded in Java extension for platforms such as `win32-x64`, `linux-x64`, `linux-arm64`, `darwin-x64`, `darwin-arm64`. The embedded JRE will be used to launch the Java Language Server by default. Users are only responsible for configuring **Project JDKs** to compile your Java projects. For example, if you are working on JDK 8, you only need to install JDK 8 and no longer need to install JDK 17 additionally.
 
 However, if you want to use a different JDK to start the Java Language Server, you can use the setting `java.jdt.ls.java.home` to do so.
 
@@ -21,7 +21,7 @@ In the universal version, the path to the Java Development Kit is searched in th
 - on the current system path
 
 Note: The path should end at the parent folder that contains the `bin` folder.
-Example Path: **Use `/usr/lib/jvm/java-11`** if `bin` exists at `/usr/lib/jvm/java-11/bin`.
+Example Path: **Use `/usr/lib/jvm/java-17`** if `bin` exists at `/usr/lib/jvm/java-17/bin`.
 
 This JDK will be used to launch the Java Language Server. by default, will be used to compile your projects.
 
@@ -40,8 +40,8 @@ If you need to compile your projects against a different JDK version, it's recom
     "path": "/path/to/jdk-11",
   },
   {
-    "name": "JavaSE-14",
-    "path": "/path/to/jdk-14",
+    "name": "JavaSE-17",
+    "path": "/path/to/jdk-17",
     "default": true
   },
 ]
@@ -55,9 +55,9 @@ About the Java 17 requirement<a name="jdk17.requirement"></a>
 ============================
 This applies mainly to the universal version.
 
-The m2e team has decided to require Java 17 as the minimum requirement for its September 2020 release. See https://github.com/eclipse-m2e/m2e-core/pull/740.
+The m2e team has decided to require Java 17 as the minimum requirement for its September 2020 release. See https://github.com/eclipse-m2e/m2e-core/pull/740. We use m2e core components to provide Maven support for the [Java language server (Eclipse JDT.LS)](https://github.com/eclipse/eclipse.jdt.ls). This requires the entire language server run on a minimum of Java 17.
 
-Because vscode-java depends on the [Eclipse JDT.LS](https://github.com/eclipse/eclipse.jdt.ls), the same requirement applies to vscode-java but on a more agressive timeline: vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, effectively shipping pre-release versions of Eclipse Platform/JDT. As of Jun, 8, 2022, Java 17 is now required for **running** vscode-java.
+Because vscode-java depends on the Eclipse JDT.LS, the same requirement applies to vscode-java but on a more agressive timeline: vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, effectively shipping pre-release versions of Eclipse Platform/JDT. As of Jun, 8, 2022, Java 17 is now required for **running** vscode-java.
 
 
 ### Do I need to migrate my projects to Java 17?
