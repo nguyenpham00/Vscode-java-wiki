@@ -55,7 +55,7 @@ About the Java 17 requirement<a name="jdk17.requirement"></a>
 ============================
 This applies mainly to the universal version.
 
-The m2e team has decided to require Java 17 as the minimum requirement for its September 2020 release. See https://github.com/eclipse-m2e/m2e-core/pull/740. We use m2e core components to provide Maven support for the [Java language server (Eclipse JDT.LS)](https://github.com/eclipse/eclipse.jdt.ls). This requires the entire language server run on a minimum of Java 17.
+The m2e team has decided to require Java 17 as the minimum requirement for its September 2020 release. See https://github.com/eclipse-m2e/m2e-core/pull/740. We use m2e core components to provide Maven support for the Java language server [Eclipse JDT.LS](https://github.com/eclipse/eclipse.jdt.ls). This requires the entire language server to run on a minimum of Java 17.
 
 Because vscode-java depends on the Eclipse JDT.LS, the same requirement applies to vscode-java but on a more agressive timeline: vscode-java usually consumes JDT.LS builds that depend on bleeding edge JDT features, effectively shipping pre-release versions of Eclipse Platform/JDT. As of Jun, 8, 2022, Java 17 is now required for **running** vscode-java.
 
