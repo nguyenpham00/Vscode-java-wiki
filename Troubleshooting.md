@@ -60,5 +60,9 @@ The Java Language Server log file might also contain other informations. To acce
 
 It will open the Java Language Server log file in a new tab.
 
+## Turn off lombok support
+
+Lombok support is enabled by default so that projects may take advantage of this immediately. However, in some cases, it may interfere with the reporting of some errors. Disabling it temporarily (`"java.jdt.ls.lombokSupport.enabled": false`) when attempting to uncover failures can help.
+
 
 
