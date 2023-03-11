@@ -1,12 +1,12 @@
-Under the hood, instead of `javac`, vscode-java uses [ECJ](https://stackoverflow.com/a/3061680/753170), a Java 18 compiler provided by [Eclipse JDT](https://www.eclipse.org/jdt/core/). It is used to compile against all other versions of Java. 
-But the ECJ compiler [only supports the latest JDK release when it comes to preview features](https://bugs.eclipse.org/bugs/show_bug.cgi?id=549258#c15). It means that, with the latest vscode-java release, **preview features can not be enabled for projects compiling against Java 17 (or older)**, even if you configured the proper runtime. Those projects need to be updated to use Java 18 in vscode-java.
+Under the hood, instead of `javac`, vscode-java uses [ECJ](https://stackoverflow.com/a/3061680/753170), a Java 19 compiler provided by [Eclipse JDT](https://www.eclipse.org/jdt/core/). It is used to compile against all other versions of Java. 
+But the ECJ compiler [only supports the latest JDK release when it comes to preview features](https://bugs.eclipse.org/bugs/show_bug.cgi?id=549258#c15). It means that, with the latest vscode-java release, **preview features can not be enabled for projects compiling against Java 18 (or older)**, even if you configured the proper runtime. Those projects need to be updated to use Java 19 in vscode-java.
 
 It's recommended you configure the `java.configuration.runtimes` preference in your user's settings.json:
 ```json
 "java.configuration.runtimes": [
   {
-    "name": "JavaSE-18",
-    "path": "/path/to/jdk-18",
+    "name": "JavaSE-19",
+    "path": "/path/to/jdk-19",
     "default": true
   },
 ],
@@ -14,7 +14,7 @@ It's recommended you configure the `java.configuration.runtimes` preference in y
 Now, depending on the style of Java projects you use, there are different ways to enable preview features. 
 
 # Standalone Java files
-When you open standalone Java files (i.e. which have no Eclipse/Maven/Gradle settings), preview features are enabled by default, without warnings, if vscode-java was started with a JDK 18 or `JavaSE-18` is set to be the default in `java.configuration.runtimes`.
+When you open standalone Java files (i.e. which have no Eclipse/Maven/Gradle settings), preview features are enabled by default, without warnings, if vscode-java was started with a JDK 19 or `JavaSE-19` is set to be the default in `java.configuration.runtimes`.
 
 # Maven projects
 Maven projects need to have the `--enable-preview` flag added to the maven-compiler-plugin configuration, in their pom.xml:
@@ -31,9 +31,9 @@ Maven projects need to have the `--enable-preview` flag added to the maven-compi
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.10.1</version>
         <configuration>
-          <release>18</release>
+          <release>19</release>
           <compilerArgs>--enable-preview</compilerArgs>
         </configuration>
       </plugin>
@@ -48,23 +48,23 @@ Eclipse projects need to add the the following preferences to `.settings/org.ecl
 ```
 eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
-org.eclipse.jdt.core.compiler.codegen.targetPlatform=18
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=19
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
-org.eclipse.jdt.core.compiler.compliance=18
+org.eclipse.jdt.core.compiler.compliance=19
 org.eclipse.jdt.core.compiler.debug.lineNumber=generate
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
 org.eclipse.jdt.core.compiler.debug.sourceFile=generate
 org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
 org.eclipse.jdt.core.compiler.release=enabled
-org.eclipse.jdt.core.compiler.source=18
+org.eclipse.jdt.core.compiler.source=19
 
 org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=enabled
 org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=ignore
 ```
 
 # Gradle projects
-**:warning: Gradle 7.5 minimum is required to build Java 18 projects.** 
+**:warning: Gradle 7.6 minimum is required to build Java 19 projects.** 
 
 Gradle projects can also maintain the same `.settings/org.eclipse.jdt.core.prefs` file. Alternatively, adding an `eclipse.jdt.file.withProperties` hook in build.gradle is possible, but requires the gradle `compileJdt` task *to be invoked manually*, as [Buildship](https://github.com/eclipse/buildship), the underlying Gradle integration tool, [doesn't invoke it](https://discuss.gradle.org/t/when-does-buildship-eclipse-customization-run/20781/2) :
 
@@ -74,19 +74,16 @@ plugins {
     id 'java-library'
     id 'eclipse'
 }
-sourceCompatibility = JavaVersion.VERSION_18
-targetCompatibility = JavaVersion.VERSION_18
+sourceCompatibility = JavaVersion.VERSION_19
+targetCompatibility = JavaVersion.VERSION_19
 
-repositories {
-     jcenter()
-}
 compileJava {
     options.compilerArgs += ["--enable-preview"]
 }
 compileTestJava {
     options.compilerArgs += ["--enable-preview"]
 }
-//Buildship doesn't use that hooks (https://discuss.gradle.org/t/when-does-buildship-eclipse-customization-run/20781/2)
+//Buildship doesn't use that hook (https://discuss.gradle.org/t/when-does-buildship-eclipse-customization-run/20781/2)
 //you need to run `gradle eclipse` separately
 eclipse.jdt.file.withProperties { props ->
     props['org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures']= 'enabled'
