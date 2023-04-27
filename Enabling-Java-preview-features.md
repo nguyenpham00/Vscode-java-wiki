@@ -1,5 +1,5 @@
 Under the hood, instead of `javac`, vscode-java uses [ECJ](https://stackoverflow.com/a/3061680/753170), a Java 20 compiler provided by [Eclipse JDT](https://www.eclipse.org/jdt/core/). It is used to compile against all other versions of Java. 
-But the ECJ compiler [only supports the latest JDK release when it comes to preview features](https://bugs.eclipse.org/bugs/show_bug.cgi?id=549258#c15). It means that, with the latest vscode-java release, **preview features can not be enabled for projects compiling against Java 18 (or older)**, even if you configured the proper runtime. Those projects need to be updated to use Java 20 in vscode-java.
+But the ECJ compiler [only supports the latest JDK release when it comes to preview features](https://bugs.eclipse.org/bugs/show_bug.cgi?id=549258#c15). It means that, with the latest vscode-java release, **preview features can not be enabled for projects compiling against Java 19 (or older)**, even if you configured the proper runtime. Those projects need to be updated to use Java 20 in vscode-java.
 
 It's recommended you configure the `java.configuration.runtimes` preference in your user's settings.json:
 ```json
